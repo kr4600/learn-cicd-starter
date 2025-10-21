@@ -75,18 +75,18 @@ func TestGetAPIKey(t *testing.T) {
 			headers: http.Header{
 				"Authorization": []string{"ApiKey  my-secret-key-12345"},
 			},
-			expectedKey: "",
+			expectedKey:   "",
 			expectedError: nil,
-			shouldError: false,
+			shouldError:   false,
 		},
 		{
 			name: "valid header with key containing spaces",
 			headers: http.Header{
 				"Authorization": []string{"ApiKey my-key with spaces"},
 			},
-			expectedKey: "my-key",
+			expectedKey:   "my-key",
 			expectedError: nil,
-			shouldError: false,
+			shouldError:   false,
 		},
 	}
 
@@ -146,4 +146,3 @@ func TestGetAPIKey_ErrorMessages(t *testing.T) {
 		})
 	}
 }
-
